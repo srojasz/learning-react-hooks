@@ -91,6 +91,18 @@ body {
   }
 }
 
+.favourites-container {
+  width: 400px;
+  margin: 30px 15px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: grey;
+
+  h2 {
+    text-align: center;
+  }
+}
 
 
 
@@ -103,6 +115,7 @@ body {
 }
 
 .list-container {
+  width: 700px;
   margin-top: 50px;
   display: flex;
   justify-content: center;
