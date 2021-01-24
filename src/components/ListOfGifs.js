@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import GifCard from './GifCard';
 import {Switch, Route} from 'react-router-dom';
-import GifDetail from "./GifDetail";
+import GifDetail from "./GifCard";
 
 export default function ListOfGifs(props) {
     const {gifs} = props;

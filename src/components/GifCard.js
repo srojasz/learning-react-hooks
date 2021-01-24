@@ -5,7 +5,7 @@ export default function GifDetail(props) {
     return (
         <Link to={id} className="card-container">
             <img alt={title} src={imgUrl}></img>
-            <h3>{title}</h3>
+            <p>{title}</p>
         </Link>
     
     )

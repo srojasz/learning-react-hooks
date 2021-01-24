@@ -1,6 +1,6 @@
-import "./App.css";
+import "./App.scss";
 import { Fragment } from "react";
-
+import Header from './components/Header';
 
 import Finder from './components/Finder';
 
@@ -8,8 +8,8 @@ function App() {
   
   return (
       <Fragment>
-          <div className="app-container">
-              <h2>Buscador de gifs</h2>
+          <div className="app__container">
+              <Header />
               <Finder />                
           </div>
       </Fragment>
