@@ -1,12 +1,18 @@
 import {Link} from 'react-router-dom';
 
-export default function GifDetail(props) {
-    const {imgUrl, title, id} = props;
+export default function GifCard(props) {
+    const {id, title, imgUrl, setNewFavourites} = props;
+    function addFav(gif) {
+        // if (id === gif) {
+        //     setNewFavourites(gif);
+        // }
+    }
+
     return (
-        <Link to={id} className="card-container">
+        <a id={id} className="card-container" onClick={() => addFav(id)}>
             <img alt={title} src={imgUrl}></img>
             <p>{title}</p>
-        </Link>
+        </a>
     
     )
     }

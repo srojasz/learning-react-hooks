@@ -4,7 +4,7 @@ import {Switch, Route} from 'react-router-dom';
 import GifDetail from "./GifCard";
 
 export default function ListOfGifs(props) {
-    const {gifs} = props;
+    const {gifs, setNewFavourites} = props;
 
     if (gifs.length === 0 ) {
         return <p>Lo sentimos, no hemos encontrado resultados de búsqueda</p>
@@ -14,11 +14,11 @@ export default function ListOfGifs(props) {
         {
             gifs.map(gif => {
                const {id, title, url} = gif;
-               
+                             
                 return ( 
                 <Switch>
                     <Route exact path="/">
-                        <GifCard key={id} imgUrl={url} title={title} />
+                        <GifCard key={id} imgUrl={url} title={title} id={id} setNewFavourites={setNewFavourites}/>
                     </Route>
                     <Route path={id}>
                         <GifDetail key={id} imgUrl={url} title={title} />
@@ -33,8 +33,3 @@ export default function ListOfGifs(props) {
     }
 
 }
-
-
-// gifs.map(image => {
-//                 return <img src={image}></img>
-//             })
