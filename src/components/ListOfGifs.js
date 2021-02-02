@@ -1,35 +1,23 @@
-import { Fragment } from "react";
-import GifCard from './GifCard';
-import {Switch, Route} from 'react-router-dom';
-import GifDetail from "./GifCard";
+import GifCard from "./GifCard";
 
-export default function ListOfGifs(props) {
-    const {gifs, setNewFavourites} = props;
+import "../styles/ListOfGifs.scss";
 
-    if (gifs.length === 0 ) {
-        return <p>Lo sentimos, no hemos encontrado resultados de búsqueda</p>
-    } else {
-        return (
-        <Fragment>
-        {
-            gifs.map(gif => {
-               const {id, title, url} = gif;
-                             
-                return ( 
-                <Switch>
-                    <Route exact path="/">
-                        <GifCard key={id} imgUrl={url} title={title} id={id} setNewFavourites={setNewFavourites}/>
-                    </Route>
-                    <Route path={id}>
-                        <GifDetail key={id} imgUrl={url} title={title} />
-                    </Route>
-
-                </Switch>
-                )
-            })
-        }
-        </Fragment>
-        )
-    }
-
+export default function ListOfGifs({ gifs }) {
+  console.log(gifs, "desde lista");
+  if (gifs.length === 0) {
+    return (
+      <div className="no-list-container">
+        Lo sentimos, no hemos encontrado resultados de búsqueda
+      </div>
+    );
+  } else {
+    return (
+      <div className="list-container">
+        {gifs.map((gif) => {
+          const { id, title, url } = gif;
+          return <GifCard key={id} imgUrl={url} title={title} id={id} />;
+        })}
+      </div>
+    );
+  }
 }

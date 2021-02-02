@@ -1,20 +1,31 @@
+import { useState } from "react";
+import Header from "./components/Header";
+import fetchGifs from "./services/fetchGifs";
+import ListOfGifs from "./components/ListOfGifs";
+import InitialIdeas from "./components/InitialIdeas";
+
 import "./App.scss";
-import { Fragment } from "react";
-import Header from './components/Header';
 
-import Finder from './components/Finder';
-import Favourites from "./components/Favourites";
+function App() {
+  const [gifs, setGifs] = useState([]);
 
-function App() { 
+  function setGifKeyword(keyword) {
+    fetchGifs(keyword).then(setGifs);
+  }
+
   return (
-      <Fragment>
-          <div className="app__container">
-              <Header />
-              <Finder />      
-          </div>
-      </Fragment>
-  )
-  
-}  
+    <div className="app__container">
+      <Header setGifKeyword={setGifKeyword} />
+
+      {gifs.length === 0 ? (
+        <div className="initial-ideas">
+          <InitialIdeas setGifKeyword={setGifKeyword} />
+        </div>
+      ) : (
+        <ListOfGifs gifs={gifs} />
+      )}
+    </div>
+  );
+}
 
 export default App;
