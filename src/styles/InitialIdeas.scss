@@ -1,24 +1,3 @@
-:root {
-  --background-color: #e1ad01;
-  --card-color: orange;
-}
-
-// Reset.
-* {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  text-decoration: none;
-  border: none;
-  outline: none;
-  box-sizing: border-box;
-  max-width: 100vw;
-}
-
-// Fonts.
-
-@import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap");
-
 .initial-ideas {
   height: 80vh;
   padding: 50px;

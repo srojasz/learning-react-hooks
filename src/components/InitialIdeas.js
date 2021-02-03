@@ -1,5 +1,7 @@
 import GifRecommendation from "./GifRecommendation";
 
+import "../styles/InitialIdeas.scss";
+
 export default function InitialIdeas({ setGifKeyword }) {
   const initialIdeasForUsers = ["pandas", "cats", "dogs"];
   return (

@@ -1,10 +1,10 @@
 import { useState } from "react";
-import Header from "./components/Header";
-import fetchGifs from "./services/fetchGifs";
-import ListOfGifs from "./components/ListOfGifs";
-import InitialIdeas from "./components/InitialIdeas";
+import Header from "./Header";
+import fetchGifs from "../services/fetchGifs";
+import ListOfGifs from "./ListOfGifs";
+import InitialIdeas from "./InitialIdeas";
 
-import "./App.scss";
+import "../styles/App.scss";
 
 function App() {
   const [gifs, setGifs] = useState([]);
@@ -16,8 +16,9 @@ function App() {
 
   function deleteFav(gif) {
     const index = favourites.indexOf(gif);
-    favourites.splice(index, 1);
-    setFavourites(favourites);
+    const newFavs = [...favourites];
+    newFavs.splice(index, 1);
+    setFavourites(newFavs);
   }
 
   function setGifKeyword(keyword) {

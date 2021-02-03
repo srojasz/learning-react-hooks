@@ -8,7 +8,7 @@ export default function Header({ setGifKeyword }) {
     <header className="header">
       <div className="header__info">
         <a href="/">
-          <img className="header__logo" src={logo}></img>
+          <img className="header__logo" src={logo} alt="Finder Logo"></img>
         </a>
         <h3 className="header__title">
           How do you <span>gif</span> today?
