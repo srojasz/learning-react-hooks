@@ -12,7 +12,7 @@ export default function GifRecommendation({ setGifKeyword, name }) {
         type="radio"
         name="surprise-me"
       />
-      <label htmlFor={name}>{name + "'s mood"}</label>
+      <label htmlFor={name}>{name + " mood"}</label>
     </div>
   );
 }

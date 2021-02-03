@@ -6,11 +6,11 @@ export default function InitialIdeas({ setGifKeyword }) {
     <form>
       <div className="initial-ideas__options">
         <p className="initial-ideas__options--text">
-          ¿No sabes por dónde empezar?
+          No ideas?
+          <span>How about starting with these lovely animals?</span>
         </p>
         <div className="initial-ideas__options--recommendations">
           {initialIdeasForUsers.map((idea) => {
-            console.log(idea);
             return (
               <GifRecommendation
                 setGifKeyword={setGifKeyword}

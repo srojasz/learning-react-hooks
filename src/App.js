@@ -22,7 +22,7 @@ function App() {
           <InitialIdeas setGifKeyword={setGifKeyword} />
         </div>
       ) : (
-        <ListOfGifs gifs={gifs} />
+        <ListOfGifs gifs={gifs} setGifs={setGifs} />
       )}
     </div>
   );
