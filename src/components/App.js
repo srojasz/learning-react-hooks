@@ -12,7 +12,9 @@ function App() {
   const [keyword, setKeyword] = useState([""]);
 
   useEffect(() => {
-    fetchGifs(keyword).then(setGifs);
+    if (keyword !== "") {
+      fetchGifs(keyword).then(setGifs);
+    }
   }, [keyword]);
 
   // Functions.
