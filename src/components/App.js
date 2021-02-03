@@ -11,6 +11,11 @@ function App() {
   const [favourites, setFavourites] = useState([]);
   const [keyword, setKeyword] = useState([""]);
 
+  useEffect(() => {
+    fetchGifs(keyword).then(setGifs);
+  }, [keyword]);
+
+  // Functions.
   function addFav(gif) {
     setFavourites([...favourites, gif]);
   }
@@ -25,10 +30,6 @@ function App() {
   function setGifKeyword(keyword) {
     setKeyword(keyword);
   }
-
-  useEffect(() => {
-    fetchGifs(keyword).then(setGifs);
-  }, [keyword]);
 
   return (
     <div className="app__container">
