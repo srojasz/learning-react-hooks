@@ -8,7 +8,7 @@ export default function fetchGifs(keyword) {
       const { data } = responseData;
       const gifs = data.map((image) => {
         const { title, id, images } = image;
-        const { url } = images.original;
+        const { url } = images.fixed_height;
 
         return { title, id, url };
       });
