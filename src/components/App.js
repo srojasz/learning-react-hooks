@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "./Header";
 import fetchGifs from "../services/fetchGifs";
 import ListOfGifs from "./ListOfGifs";
@@ -9,6 +9,7 @@ import "../styles/App.scss";
 function App() {
   const [gifs, setGifs] = useState([]);
   const [favourites, setFavourites] = useState([]);
+  const [keyword, setKeyword] = useState([""]);
 
   function addFav(gif) {
     setFavourites([...favourites, gif]);
@@ -22,8 +23,12 @@ function App() {
   }
 
   function setGifKeyword(keyword) {
-    fetchGifs(keyword).then(setGifs);
+    setKeyword(keyword);
   }
+
+  useEffect(() => {
+    fetchGifs(keyword).then(setGifs);
+  }, [keyword]);
 
   return (
     <div className="app__container">
