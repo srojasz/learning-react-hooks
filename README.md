@@ -9,7 +9,7 @@ You can see it in action here:
 ʕ•́ᴥ•̀ʔっ **https://vibrant-pare-bb955a.netlify.app/**
 
 
-### What I have learn
+### What I have learnt
 
 🚀 How to use the hook useState to manage the state of the project.
 
