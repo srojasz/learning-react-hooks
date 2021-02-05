@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { useLocalStorage } from "../hooks/useLocalStorage";
+
 import Header from "./Header";
 import fetchGifs from "../services/fetchGifs";
 import ListOfGifs from "./ListOfGifs";
@@ -8,7 +10,7 @@ import "../styles/App.scss";
 
 function App() {
   const [gifs, setGifs] = useState([]);
-  const [favourites, setFavourites] = useState([]);
+  const [favourites, setFavourites] = useLocalStorage("favorites", []);
   const [keyword, setKeyword] = useState([""]);
 
   useEffect(() => {
